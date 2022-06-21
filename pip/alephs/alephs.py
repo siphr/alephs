@@ -2,7 +2,7 @@
 
 
 def get_version():
-    return "0.1"
+    return "0.5"
 
 
 def _load_data():

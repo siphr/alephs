@@ -1,7 +1,7 @@
 # Maintainer: siphr <archlinux@techtum.dev>
 
 pkgname=alephs
-pkgver=0.4
+pkgver=0.5
 pkgrel=1
 pkgdesc="List of Pakistan's emergency services."
 depends=(python)

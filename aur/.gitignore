@@ -1,6 +1,4 @@
-*.git
-dist
-build
-src
 pkg
-*zst
+*.zst
+src
+*.tar.gz
