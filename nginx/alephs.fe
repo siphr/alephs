@@ -1,0 +1,14 @@
+server {
+    listen 443 ssl;
+    client_max_body_size 1G;
+
+    server_name alephs.techtum.dev;
+
+    ssl_certificate /etc/letsencrypt/live/alephs.techtum.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/alephs.techtum.dev/privkey.pem; # managed by Certbot
+    root /opt/apps/alephs/fe/build;
+    index index.html index.htm;
+    location / {
+	   try_files $uri /index.html =404;
+   }
+}

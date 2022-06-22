@@ -1,0 +1,13 @@
+[Unit]
+Description=Alephs
+After=network.target
+
+[Service]
+User=root
+Group=www
+WorkingDirectory=/opt/apps/alephs/be/src
+#Environment="PATH=/var/www/myapp/venv/bin"
+ExecStart=gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:main -b :8002
+
+[Install]
+WantedBy=multi-user.target
