@@ -1,0 +1,39 @@
+.details {
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.contacts {
+    vertical-align: middle;
+}
+.container {
+    margin: 2%;
+    display: flex;
+}
+
+.center {
+    float: center;
+}
+.left {
+    width: 92%;
+    float: left;
+}
+.right{
+    width: 8%;
+    float: right;
+    text-align: right;
+}
+
+.column {
+  float: left;
+  width: 80%;
+  padding: 10px;
+  /*height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
