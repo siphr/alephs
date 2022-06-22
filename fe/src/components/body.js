@@ -12,12 +12,13 @@ toast.configure();
 
 function Body() {
   //const srvr = "0.0.0.0";
-  const srvr = "192.168.1.194";
+  const srvr = "api-alephs";
+  const port = "";//"8002";
   const cmd = window.location.pathname.split('/')[1];
   const [data, setData] = useState();
 
   const getInstitutes = async () => {
-    const base_url = "http://" + srvr + ":8000/institutions";
+    const base_url = "https://" + srvr + ".techtum.dev" + port + "/institutions";
     let fetch_url = base_url;
 
     if (cmd) {
@@ -47,7 +48,7 @@ function Body() {
       const list = await rq.json();
       const lst = list.res;
 
-      console.log(list);
+      //console.log(list);
       let insts = [];
       for (let idx in list.institutions) {
         const list_item = list.institutions[idx];
@@ -60,11 +61,11 @@ function Body() {
         insts.push(list_item);
       }
 
-      console.log(insts);
+      //console.log(insts);
       return setData(insts);
     }
 
-    console.log(fetch_url);
+    //console.log(fetch_url);
     const res = await fetch(fetch_url);
     const data = await res.json();
     return setData(data.res);
@@ -100,7 +101,7 @@ function Body() {
   var formatted = '';
 
   if (data) {
-    console.log(data);
+    //console.log(data);
     formatted = data.map(renderInstitute);
   }
 
@@ -112,7 +113,7 @@ function Body() {
   }
   */
 
-  if (formatted) {console.log(formatted);}
+  //if (formatted) {console.log(formatted);}
 
   return (
     <div className="c_body">
